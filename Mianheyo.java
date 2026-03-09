@@ -73,16 +73,19 @@ class Intern extends Employee{
 
 public class Mianheyo{
     public static void main(String[] args) {
-    
+        double totalPayroll = 0;
         Employee[] pekerja = new Employee[4];
     
         pekerja [0] = new Manager("Alya",5000000);
         pekerja [1] = new Programmer("Budi",4000000);
         pekerja [2] = new Programmer("Citra",4500000);
         pekerja [3] = new Intern("Dina",2000000);
-    
+        
         for (Employee list : pekerja){
             list.printInfo();
+            totalPayroll += list.calculateSalary();
         }
+
+        System.out.printf("Total Payroll: %.1f%n", totalPayroll);
     }
 }
